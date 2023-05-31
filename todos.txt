@@ -1,6 +1,5 @@
-moer
-run
-moer
-hard
-bliksem
-jhkn
+PBSmoer
+maak skoon
+decell
+GA
+Decell
