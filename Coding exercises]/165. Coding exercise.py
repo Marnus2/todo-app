@@ -2,6 +2,8 @@
 import PySimpleGUI as sg
 from converters import convert
 
+sg.theme("Black")
+
 feet_label = sg.Text("Enter feet: ")
 feet_input = sg.Input(key="feet")
 
@@ -10,14 +12,21 @@ inches_input = sg.Input(key="inches")
 
 button = sg.Button("Convert")
 output_label = sg.Text("", key="output")
+exit_button = sg.Button("Exit")
 
 window = sg.Window("Convertor",
                    layout=[[feet_label, feet_input],
                            [inches_label, inches_input],
-                           [button, output_label]])
+                           [button, output_label],
+                           [exit_button]])
 
 while True:
     event, values = window.read()
+    match event:
+        case "Exit":
+            break
+        case sg.WIN_CLOSED:
+            break
     feet = float(values["feet"])
     inches = float(values["inches"])
 
